@@ -37,9 +37,15 @@ Good thing about that hack that you use that unique id anywhere as reference to 
 and it will works fine. Also this approach doesn't required any central authority to be involved - that you need is just to 
 use that unique id for lookup transactions and you do not depend at all about who/when added that device into db before.
 
-* Use some kind of Central Authority which will be provide one entry point to add/lookup device operations. So we have ha CA and always when we add new device we should reach that CA. This CA have one public/private keypair which used for all devices, so when new device came up on they just get all transactions for all devices and then lookup in these transactions for this device.
-
-
-
-
+* 
+Use some kind of Central Authority which will be provide one entry point to add/lookup device operations. So we have ha CA and always when we add new device we should reach that CA. This CA have one public/private keypair which used for all devices, so when new device came up on they just get all transactions for all devices and then lookup in these transactions for this device. Benefits here is that we have real (normal ones) cryptographic keypair which can be treated anywhere properly and there's no any hack about that. Another thing is that here we have much more possibilities for lookup for devices - for example we can do non-strict search by using not only unique id, but also using some other properties like manufacturing data (year, color, type, factory) to double check that this device id is correct. Actually we do download all transactions into some storage and then do lookup as we want - it surely will require much more resources from technical point ( i.e. RAM/CPU or even cluster of resources ), but will give two very important point :
+  - using public/private key pair in correct way
+  - wide set ( unlimited i may say ) of possibilities to lookup for device.
+There's some downsides as well:
+  - we do stick with one CA, if we talk about let's say smart cars - it should be car manufacturer ( like VolksWagen ). It's not a really convenient thing and brings many potential inconveniences from end-user point of view - like you need to reach somehow that CA (i.e. go to their website). In worst case it will bring too much beaurocracy and people won't use that - so practical implementation should be end-user oriented, not process-driven :-)
+  - In any case costs of this approach will be high - more time should be taken to lookup and effecient implementation should require more computational resources.
+  
+  
+  
+  
 
