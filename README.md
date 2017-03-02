@@ -37,8 +37,9 @@ Good thing about that hack that you use that unique id anywhere as reference to 
 and it will works fine. Also this approach doesn't required any central authority to be involved - that you need is just to 
 use that unique id for lookup transactions and you do not depend at all about who/when added that device into db before.
 
-* Use some kind of Central Authority which will be provide one entry point to add/lookup device operations. So we have one CA
-and always when we add new device we should reach that CA. This CA have one public/private keypair 
+* Use some kind of Central Authority which will be provide one entry point to add/lookup device operations. So we have ha CA and always when we add new device we should reach that CA. This CA have one public/private keypair which used for all devices, so when new device came up on they just get all transactions for all devices and then lookup in these transactions for this device.
+
+
 
 
 
